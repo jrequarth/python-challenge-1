@@ -198,13 +198,13 @@ while place_order:
 print("This is what we are preparing for you.\n")
 
 # Uncomment the following line to check the structure of the order
-#???????????????????????????????????????????????????????????????????????????????????
 print(customer_order_list)
+print("_\n")
 
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
-# 6. Loop through the items in the customer's order?????????????????????????????????
+# 6. Loop through the items in the customer's order
 for i in range (len(customer_order_list)):
     # 7. Store the dictionary items as variables
     order_item = customer_order_list[i]["Item name"]
@@ -212,19 +212,19 @@ for i in range (len(customer_order_list)):
     order_quantity = customer_order_list[i]["Quantity"]
 
     # 8. Calculate the number of spaces for formatted printing
-    num_item_spaces = 26 - len("Item name")
-    num_price_spaces = 5 - len(str("Price"))
+    num_item_spaces = 26 - len(order_item)
+    num_price_spaces = 5 - len(str(order_price))
     #num_quantity_spaces = 6 - len(str("Quantity"))
     
     # 9. Create space strings
     item_spaces = " " * num_item_spaces
     price_spaces_leading = " " * num_price_spaces
-    #price_spaces_following = " " * 2
+    price_spaces_following = " " * 2
     #quantity_spaces_leading = " " * num_quantity_spaces
     #quantity_spaces_following = " " * 5
 
     # 10. Print the item name, price, and quantity
-    print(f"{order_item}{item_spaces}| ${order_price}{price_spaces_leading}| {order_quantity}")
+    print(f"{order_item}{item_spaces}| {price_spaces_leading}${order_price} |    {order_quantity}")
 
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
@@ -236,8 +236,8 @@ total_cost_of_order = sum([item["Price"] * item["Quantity"] for item in  custome
 #cost_per_item.append(cost_subtotal)
     
 #total_cost_of_order = sum([cost for cost in cost_per_item])
-
-print(f'The total cost of your order is: ${total_cost_of_order}')
+print(" \n")
+print(f'The total cost of your order is: ${total_cost_of_order}\n')
 
 
         
